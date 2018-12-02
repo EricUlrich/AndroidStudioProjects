@@ -87,7 +87,8 @@ public class MainActivity extends WearableActivity {
                 //mTextView.append("1");
                 OutVal++;
                 if ( OutVal.equals(3) ){
-                    // Will Set out numbers here
+                    // If 3 outs are recorded then clear the strike and ball counters_
+                    // since the half inning should be over.
                     StrikeVal = 0;
                     StrikeNum.setText(StrikeVal.toString());
                     BallVal = 0;
@@ -95,10 +96,13 @@ public class MainActivity extends WearableActivity {
                     OutVal = 0;
                     OutNum.setText((OutVal.toString()));
                 }else{
-                    StrikeVal = 0;
-                    StrikeNum.setText(StrikeVal.toString());
-                    BallVal = 0;
-                    BallNum.setText((BallVal.toString()));
+                    // Do not reset the strike and ball counts due to out on bases.
+                    // This will need something else as out on bases or by batter not_
+                    // being a strike out.
+                    //StrikeVal = 0;
+                    //StrikeNum.setText(StrikeVal.toString());
+                    //BallVal = 0;
+                    //BallNum.setText((BallVal.toString()));
                     OutNum.setText((OutVal.toString()));
                 }
             }
