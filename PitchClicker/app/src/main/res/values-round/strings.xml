@@ -1,3 +1,5 @@
 <resources>
-    <string name="hello_world">Hello Round World!</string>
+    <string name="balls_button">Balls</string>
+    <string name="strikes_button">Strikes</string>
+    <string name="outs_button">Outs</string>
 </resources>

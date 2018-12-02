@@ -4,5 +4,7 @@
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="hello_world">Hello Square World!</string>
+    <string name="balls_button">Balls</string>
+    <string name="strikes_button">Strikes</string>
+    <string name="outs_button">Outs</string>
 </resources>

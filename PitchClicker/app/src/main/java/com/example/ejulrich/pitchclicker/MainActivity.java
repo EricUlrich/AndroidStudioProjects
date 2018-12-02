@@ -3,44 +3,39 @@ package com.example.ejulrich.pitchclicker;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends WearableActivity {
 
-    private TextView mTextView;
-    Button StrikeButton;
-    Button BallButton;
-    Button OutButton;
-    TextView StrikeNum;
-    TextView BallNum;
-    TextView OutNum;
-    Integer StrikeVal = 0;
-    Integer BallVal = 0;
-    Integer OutVal = 0;
+    private Button OutButton;
+    private TextView StrikeNum;
+    private TextView BallNum;
+    private TextView OutNum;
+    private Integer StrikeVal = 0;
+    private Integer BallVal = 0;
+    private Integer OutVal = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        StrikeButton = (Button) findViewById(R.id.Strike_button);
-        BallButton = (Button) findViewById(R.id.Ball_button);
-        OutButton = (Button) findViewById(R.id.Out_button);
-        StrikeNum = (TextView) findViewById(R.id.Strike_textView);
-        BallNum = (TextView) findViewById(R.id.Ball_textView);
-        OutNum = (TextView) findViewById(R.id.Out_textView);
+        Button strikeButton = findViewById(R.id.Strike_button);
+        Button ballButton = findViewById(R.id.Ball_button);
+        OutButton = findViewById(R.id.Out_button);
+        StrikeNum = findViewById(R.id.Strike_textView);
+        BallNum = findViewById(R.id.Ball_textView);
+        OutNum = findViewById(R.id.Out_textView);
         // Set the default values
         StrikeNum.setText(StrikeVal.toString());
         BallNum.setText(BallVal.toString());
         OutNum.setText(OutVal.toString());
         // Click listeners
-        StrikeButton.setOnClickListener(new OnClickListener() {
+        strikeButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mTextView.append("1");
                 StrikeVal++;
                 if ( StrikeVal.equals(3) ){
                     // Will Set out numbers here
@@ -65,10 +60,9 @@ public class MainActivity extends WearableActivity {
                 }
             }
         });
-        BallButton.setOnClickListener(new OnClickListener() {
+        ballButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mTextView.append("1");
                 BallVal++;
                 if ( BallVal.equals(4) ){
                     // Will Set out numbers here
@@ -84,7 +78,6 @@ public class MainActivity extends WearableActivity {
         OutButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mTextView.append("1");
                 OutVal++;
                 if ( OutVal.equals(3) ){
                     // If 3 outs are recorded then clear the strike and ball counters_
