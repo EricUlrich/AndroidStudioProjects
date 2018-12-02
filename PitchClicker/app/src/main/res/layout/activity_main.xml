@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="15dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/Strike_textView"
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                app:layout_constraintEnd_toStartOf="@+id/Strike_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/Strike_button"
+                app:layout_constraintTop_toTopOf="@+id/Ball_textView" />
+
+            <TextView
+                android:id="@+id/Out_textView"
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Out_button" />
+
+            <TextView
+                android:id="@+id/Ball_textView"
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="76dp"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                app:layout_constraintBottom_toBottomOf="@+id/Ball_button"
+                app:layout_constraintEnd_toEndOf="@+id/Ball_button"
+                app:layout_constraintStart_toStartOf="@+id/Ball_button" />
+
+            <Button
+                android:id="@+id/Out_button"
+                android:layout_width="62dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="116dp"
+                android:text="Out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/Ball_button"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="56dp"
+                android:text="Ball"
+                app:layout_constraintBottom_toBottomOf="@+id/Out_button"
+                app:layout_constraintStart_toEndOf="@+id/Strike_button" />
+
+            <Button
+                android:id="@+id/Strike_button"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:text="Strike"
+                app:layout_constraintBottom_toTopOf="@+id/Out_button"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+</android.support.wear.widget.BoxInsetLayout>
