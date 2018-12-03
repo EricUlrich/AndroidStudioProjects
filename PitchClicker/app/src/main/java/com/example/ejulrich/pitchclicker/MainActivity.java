@@ -9,10 +9,11 @@ import android.view.View.OnClickListener;
 
 public class MainActivity extends WearableActivity {
 
-    private Button OutButton;
     private TextView StrikeNum;
     private TextView BallNum;
     private TextView OutNum;
+    private TextView InningNum;
+    private Integer InningVal = 0;
     private Integer StrikeVal = 0;
     private Integer BallVal = 0;
     private Integer OutVal = 0;
@@ -24,14 +25,17 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         Button strikeButton = findViewById(R.id.Strike_button);
         Button ballButton = findViewById(R.id.Ball_button);
-        OutButton = findViewById(R.id.Out_button);
+        Button outButton = findViewById(R.id.Out_button);
+        Button inningButton = findViewById(R.id.Inning_button);
         StrikeNum = findViewById(R.id.Strike_textView);
         BallNum = findViewById(R.id.Ball_textView);
         OutNum = findViewById(R.id.Out_textView);
+        InningNum = findViewById(R.id.Inning_textView);
         // Set the default values
         StrikeNum.setText(StrikeVal.toString());
         BallNum.setText(BallVal.toString());
         OutNum.setText(OutVal.toString());
+        InningNum.setText(InningVal.toString());
         // Click listeners
         strikeButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -75,7 +79,14 @@ public class MainActivity extends WearableActivity {
                 }
             }
         });
-        OutButton.setOnClickListener(new OnClickListener() {
+        inningButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InningVal++;
+                InningNum.setText((InningVal.toString()));
+            }
+        });
+        outButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 OutVal++;
